@@ -3,329 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JING — 计科学生 | Python/Java/AI Agent</title>
+<title>JING - 个人主页</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#6366f1',
-        dark: '#0f172a',
-        card: '#1e293b'
-      }
-    }
-  }
-}
-</script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-  * { font-family: 'Inter', system-ui, sans-serif; }
-  .gradient-text { background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .hero-bg { background: radial-gradient(ellipse at top, #1e293b 0%, #0f172a 60%); }
-  .card-hover { transition: all 0.3s ease; }
-  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(99,102,241,0.15); }
-  .skill-tag { transition: all 0.2s; }
-  .skill-tag:hover { transform: scale(1.05); }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  .animate-in { animation: fadeUp 0.6s ease forwards; }
-  .delay-1 { animation-delay: 0.1s; }
-  .delay-2 { animation-delay: 0.2s; }
-  .delay-3 { animation-delay: 0.3s; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  a { color: #4f46e5; }
+  a:hover { color: #3730a3; }
 </style>
 </head>
-<body class="bg-dark text-gray-100">
+<body class="bg-white text-gray-800">
 
-<!-- 导航 -->
-<nav class="fixed top-0 w-full bg-dark/90 backdrop-blur-md border-b border-gray-800 z-50">
-  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <span class="text-xl font-bold gradient-text">JING</span>
-    <div class="flex gap-6 text-sm text-gray-400">
-      <a href="#about" class="hover:text-white transition-colors">关于</a>
-      <a href="#projects" class="hover:text-white transition-colors">项目</a>
-      <a href="#skills" class="hover:text-white transition-colors">技能</a>
-      <a href="#contact" class="hover:text-white transition-colors">联系</a>
+<div class="max-w-3xl mx-auto px-5 py-12">
+
+  <!-- header -->
+  <header class="mb-16">
+    <h1 class="text-3xl font-bold mb-2 text-gray-900">JING</h1>
+    <p class="text-gray-500 mb-4">
+      计算机科学与技术 2303 班<br>
+      方向：后端开发 / LLM 应用 / Agent 编排
+    </p>
+    <p class="text-gray-600 max-w-lg leading-relaxed">
+      写 Python 和 Java，最近在做 AI Agent 相关的开源项目。
+      喜欢从实际需求出发，做了几个自己也在用的工具。
+    </p>
+    <div class="mt-4 flex gap-4 text-sm">
+      <a href="https://github.com/JING04-PRODUCER">GitHub</a>
+      <a href="mailto:3573851322@qq.com">3573851322@qq.com</a>
     </div>
-  </div>
-</nav>
+  </header>
 
-<!-- 首屏 -->
-<section class="hero-bg min-h-screen flex items-center pt-16">
-  <div class="max-w-6xl mx-auto px-6 w-full">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <div class="animate-in">
-        <div class="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 rounded-full px-4 py-1.5 text-sm text-indigo-400 mb-6">
-          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-          计科 2303 班在读
-        </div>
-        <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
-          <span class="gradient-text">Python + Java</span><br>
-          <span class="text-white">AI Agent 开发者</span>
-        </h1>
-        <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-          专注 LLM 应用开发与 Agent 编排。3 个开源项目，从框架到底层基础设施到工具链。
-        </p>
-        <div class="flex flex-wrap gap-3">
-          <a href="#projects" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-medium transition-colors">
-            <i class="fa fa-code mr-2"></i>查看项目
-          </a>
-          <a href="https://github.com/JING04-PRODUCER" target="_blank" class="border border-gray-600 hover:border-gray-400 text-gray-300 px-6 py-3 rounded-xl font-medium transition-colors">
-            <i class="fa fa-github mr-2"></i>GitHub
-          </a>
-        </div>
-      </div>
-      <div class="animate-in delay-2 hidden lg:block">
-        <div class="bg-card rounded-2xl p-6 border border-gray-700 font-mono text-sm">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="w-3 h-3 rounded-full bg-red-400"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
-            <span class="w-3 h-3 rounded-full bg-green-400"></span>
-          </div>
-          <div class="text-gray-400 space-y-1">
-            <div><span class="text-purple-400">from</span> <span class="text-blue-300">promptslim</span> <span class="text-purple-400">import</span> quick_slim</div>
-            <div><span class="text-purple-400">from</span> <span class="text-blue-300">agent_orchestrator</span> <span class="text-purple-400">import</span> Agent</div>
-            <div class="text-gray-600"># 一行代码不改，透明追踪 API 成本</div>
-            <div>client = OpenAI(<span class="text-green-300">base_url</span>=<span class="text-yellow-300">"http://localhost:8000/v1"</span>)</div>
-            <div class="mt-3"><span class="text-gray-600"># Token 瘦身前: 328t → 瘦身后: 190t</span></div>
-            <div>report = quick_slim(prompt)</div>
-            <div><span class="text-green-300">print</span>(<span class="text-blue-300">f</span><span class="text-yellow-300">"省 {report.savings_pct}%"</span>)</div>
-            <div class="mt-3"><span class="text-gray-600"># 省 42.1%，每次调用省 $0.000345</span></div>
-            <div class="animate-pulse text-green-400 mt-2">▊</div>
-          </div>
-        </div>
+  <!-- projects -->
+  <section class="mb-16">
+    <h2 class="text-lg font-semibold border-b pb-2 mb-6 text-gray-900">项目</h2>
+
+    <!-- agent-orchestrator -->
+    <div class="mb-8">
+      <h3 class="font-semibold text-gray-900">
+        <a href="https://github.com/JING04-PRODUCER/agent-orchestrator">AgentOrchestrator</a>
+        <span class="text-gray-400 font-normal text-sm ml-2">Python + Java</span>
+      </h3>
+      <p class="text-gray-600 text-sm mt-1 leading-relaxed">
+        LLM Agent 编排框架。支持 Function Calling、异步工具执行带超时和指数退避重试、事件钩子、SSE 流式响应。
+        底层适配 OpenAI 兼容协议，一套代码对接 OpenAI / 百炼 / DeepSeek。写了 6 个集成测试，用的真实百炼 API。
+      </p>
+      <div class="mt-2 text-xs text-gray-400">
+        FastAPI · Pydantic · tenacity · asyncio · pytest
       </div>
     </div>
-  </div>
-</section>
 
-<!-- 关于 -->
-<section id="about" class="py-24">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-12 text-center"><span class="gradient-text">关于我</span></h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-card rounded-xl p-6 border border-gray-700 card-hover animate-in">
-        <div class="text-indigo-400 text-3xl mb-4"><i class="fa fa-graduation-cap"></i></div>
-        <h3 class="font-semibold text-lg mb-2">计算机科学与技术</h3>
-        <p class="text-gray-400 text-sm">2303 班在读，基础扎实，持续学习新技术</p>
-      </div>
-      <div class="bg-card rounded-xl p-6 border border-gray-700 card-hover animate-in delay-1">
-        <div class="text-purple-400 text-3xl mb-4"><i class="fa fa-code-fork"></i></div>
-        <h3 class="font-semibold text-lg mb-2">3 个开源项目</h3>
-        <p class="text-gray-400 text-sm">从 Agent 框架到成本追踪到工具链，全栈实践</p>
-      </div>
-      <div class="bg-card rounded-xl p-6 border border-gray-700 card-hover animate-in delay-2">
-        <div class="text-green-400 text-3xl mb-4"><i class="fa fa-bullseye"></i></div>
-        <h3 class="font-semibold text-lg mb-2">解决真实痛点</h3>
-        <p class="text-gray-400 text-sm">不做玩具项目，每个项目都源于实际需求</p>
+    <!-- ai-cost-sentinel -->
+    <div class="mb-8">
+      <h3 class="font-semibold text-gray-900">
+        <a href="https://github.com/JING04-PRODUCER/ai-cost-sentinel">AI Cost Sentinel</a>
+        <span class="text-gray-400 font-normal text-sm ml-2">Python + Java</span>
+      </h3>
+      <p class="text-gray-600 text-sm mt-1 leading-relaxed">
+        做这个是因为调 API 时不知道花了多少钱——把 base_url 指向这个代理，它自动拦截请求、算 Token、记费用。
+        内置主流模型定价表，超预算会告警。另起了一个 Spring Boot 仪表盘，用 Chart.js 展示费用趋势。
+        已经在本地跑了，追踪着自己的 API 调用。
+      </p>
+      <div class="mt-2 text-xs text-gray-400">
+        FastAPI 透明代理 · SQLite · Spring Boot · Thymeleaf · Chart.js · Docker
       </div>
     </div>
-  </div>
-</section>
 
-<!-- 项目 -->
-<section id="projects" class="py-24 bg-card/30">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-4 text-center"><span class="gradient-text">开源项目</span></h2>
-    <p class="text-gray-500 text-center mb-12">每个项目都有完整 README + 测试 + Docker 部署</p>
-
-    <div class="space-y-8">
-      <!-- AgentOrchestrator -->
-      <div class="bg-dark rounded-2xl border border-gray-700 overflow-hidden card-hover animate-in">
-        <div class="grid md:grid-cols-3">
-          <div class="p-8 md:col-span-2">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="bg-red-500/10 text-red-400 text-xs font-mono px-2 py-1 rounded">Python 核心 + Java 扩展</span>
-              <span class="bg-purple-500/10 text-purple-400 text-xs font-mono px-2 py-1 rounded">Function Calling</span>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">AgentOrchestrator</h3>
-            <p class="text-gray-400 mb-4 leading-relaxed">跨语言 LLM Agent 编排框架。支持异步工具执行、超时重试、事件钩子、流式 SSE 透传。一套代码兼容 OpenAI / 百炼 / DeepSeek。</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">Python 3.10+</span>
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">FastAPI</span>
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">tenacity</span>
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">asyncio</span>
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">6 集成测试</span>
-            </div>
-            <a href="https://github.com/JING04-PRODUCER/agent-orchestrator" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-medium">
-              <i class="fa fa-github mr-1"></i> 查看代码 →
-            </a>
-          </div>
-          <div class="bg-card p-8 flex items-center">
-            <div class="font-mono text-sm text-gray-400 space-y-1 w-full">
-              <div class="text-purple-400">class</div>
-              <div class="text-yellow-300 pl-4">LLMAgent:</div>
-              <div class="text-gray-500 pl-8">tools: list[Tool]</div>
-              <div class="text-gray-500 pl-8">max_iterations: int</div>
-              <div class="text-gray-500 pl-8">retry_count: int</div>
-              <div class="text-purple-400 mt-2">async def</div>
-              <div class="text-green-300 pl-4">run(prompt) → Response</div>
-              <div class="text-purple-400 mt-2">async def</div>
-              <div class="text-green-300 pl-4">stream(prompt) → AsyncIter</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AI Cost Sentinel -->
-      <div class="bg-dark rounded-2xl border border-gray-700 overflow-hidden card-hover animate-in delay-1">
-        <div class="grid md:grid-cols-3">
-          <div class="p-8 md:col-span-2">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="bg-indigo-500/10 text-indigo-400 text-xs font-mono px-2 py-1 rounded">Python + Java</span>
-              <span class="bg-green-500/10 text-green-400 text-xs font-mono px-2 py-1 rounded">实际在用</span>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">AI Cost Sentinel</h3>
-            <p class="text-gray-400 mb-4 leading-relaxed">零侵入式 AI API 费用追踪系统。透明代理拦截请求，自动计算 Token 消耗与费用，预算告警，Spring Boot + Chart.js 可视化仪表盘。目前已实际运行追踪 API 调用。</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">FastAPI 透明代理</span>
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">SQLite</span>
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">Spring Boot</span>
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">Chart.js</span>
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">Docker</span>
-            </div>
-            <a href="https://github.com/JING04-PRODUCER/ai-cost-sentinel" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-medium">
-              <i class="fa fa-github mr-1"></i> 查看代码 →
-            </a>
-          </div>
-          <div class="bg-card p-8 flex items-center">
-            <div class="text-center w-full">
-              <div class="text-5xl mb-4">🛡️</div>
-              <div class="text-gray-400 text-sm space-y-1">
-                <div>一行代码不改</div>
-                <div class="text-green-400">透明拦截统计</div>
-                <div class="text-gray-600 mt-2">多个模型定价表</div>
-                <div class="text-yellow-400">预算超支告警</div>
-                <div class="text-indigo-400">Chart.js 仪表盘</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PromptSlim -->
-      <div class="bg-dark rounded-2xl border border-gray-700 overflow-hidden card-hover animate-in delay-2">
-        <div class="grid md:grid-cols-3">
-          <div class="p-8 md:col-span-2">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-2 py-1 rounded">20 测试通过</span>
-              <span class="bg-cyan-500/10 text-cyan-400 text-xs font-mono px-2 py-1 rounded">CLI + SDK</span>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">PromptSlim 🪒</h3>
-            <p class="text-gray-400 mb-4 leading-relaxed">AI 提示词瘦身工具包。中英文 40+ 种冗余模式识别，多模型 Token 精确计数，规则 + LLM 双压缩模式。实测节省 34%~59% Token。与 AI Cost Sentinel 形成闭环。</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">tiktoken</span>
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">中英文冗余检测</span>
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">LLM 智能压缩</span>
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">Rich CLI</span>
-              <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">20/20 tests</span>
-            </div>
-            <a href="https://github.com/JING04-PRODUCER/promptslim" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-medium">
-              <i class="fa fa-github mr-1"></i> 查看代码 →
-            </a>
-          </div>
-          <div class="bg-card p-8 flex items-center">
-            <div class="w-full">
-              <div class="text-center text-sm text-gray-400 mb-3">实测效果 (gpt-4o)</div>
-              <div class="space-y-3">
-                <div class="bg-gray-800 rounded-lg p-3">
-                  <div class="text-xs text-gray-500 mb-1">中文口语</div>
-                  <div class="flex items-center gap-2">
-                    <div class="flex-1 bg-gray-700 rounded-full h-2"><div class="bg-green-400 h-2 rounded-full" style="width:66%"></div></div>
-                    <span class="text-green-400 text-xs">34%</span>
-                  </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg p-3">
-                  <div class="text-xs text-gray-500 mb-1">英文口语</div>
-                  <div class="flex items-center gap-2">
-                    <div class="flex-1 bg-gray-700 rounded-full h-2"><div class="bg-green-400 h-2 rounded-full" style="width:41%"></div></div>
-                    <span class="text-green-400 text-xs">59%</span>
-                  </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg p-3">
-                  <div class="text-xs text-gray-500 mb-1">千次调用省</div>
-                  <span class="text-indigo-400 font-bold">$1.60</span>
-                  <span class="text-gray-500 text-xs ml-1">万次 $160</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- 技能 -->
-<section id="skills" class="py-24">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-12 text-center"><span class="gradient-text">技术栈</span></h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="bg-card rounded-xl p-6 border border-gray-700 card-hover animate-in">
-        <div class="text-blue-400 text-2xl mb-4"><i class="fa fa-code"></i></div>
-        <h3 class="font-semibold mb-3">语言</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">Python</span>
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">Java</span>
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">SQL</span>
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">HTML/CSS</span>
-        </div>
-      </div>
-      <div class="bg-card rounded-xl p-6 border border-gray-700 card-hover animate-in delay-1">
-        <div class="text-green-400 text-2xl mb-4"><i class="fa fa-server"></i></div>
-        <h3 class="font-semibold mb-3">后端</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">FastAPI</span>
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">Spring Boot</span>
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">Uvicorn</span>
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">REST API</span>
-        </div>
-      </div>
-      <div class="bg-card rounded-xl p-6 border border-gray-700 card-hover animate-in delay-2">
-        <div class="text-purple-400 text-2xl mb-4"><i class="fa fa-database"></i></div>
-        <h3 class="font-semibold mb-3">数据 & 存储</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">SQLite</span>
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">aiosqlite</span>
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">MySQL</span>
-        </div>
-      </div>
-      <div class="bg-card rounded-xl p-6 border border-gray-700 card-hover animate-in delay-3">
-        <div class="text-amber-400 text-2xl mb-4"><i class="fa fa-wrench"></i></div>
-        <h3 class="font-semibold mb-3">工具</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">Docker</span>
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">Git</span>
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">Maven</span>
-          <span class="skill-tag bg-gray-800 text-gray-300 text-xs px-3 py-1.5 rounded-lg">Linux</span>
-        </div>
+    <!-- promptslim -->
+    <div class="mb-8">
+      <h3 class="font-semibold text-gray-900">
+        <a href="https://github.com/JING04-PRODUCER/promptslim">PromptSlim</a>
+        <span class="text-gray-400 font-normal text-sm ml-2">Python</span>
+      </h3>
+      <p class="text-gray-600 text-sm mt-1 leading-relaxed">
+        提示词瘦身工具。中英文 40+ 种冗余模式，正则去掉语气词和啰嗦句式。
+        支持 tiktoken 精确计数多模型 Token，也支持调 LLM 做语义级压缩，压缩前后对比报告。
+        实测中文口语省 34%、英文口语省 59%。和 Cost Sentinel 搭配用：调用前瘦身省 Token，调用后代理追踪费用。
+      </p>
+      <div class="mt-2 text-xs text-gray-400">
+        tiktoken · 中英文冗余检测 · Rich CLI · 20 tests passed
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 联系 -->
-<section id="contact" class="py-24 bg-card/30">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-4"><span class="gradient-text">联系我</span></h2>
-    <p class="text-gray-400 mb-8">欢迎交流 AI Agent、LLM 应用开发相关话题</p>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="mailto:3573851322@qq.com" class="bg-card border border-gray-700 hover:border-indigo-500 rounded-xl px-6 py-4 card-hover flex items-center gap-3">
-        <i class="fa fa-envelope text-indigo-400 text-xl"></i>
-        <div class="text-left"><div class="text-xs text-gray-500">Email</div><div class="text-sm">3573851322@qq.com</div></div>
-      </a>
-      <a href="https://github.com/JING04-PRODUCER" target="_blank" class="bg-card border border-gray-700 hover:border-indigo-500 rounded-xl px-6 py-4 card-hover flex items-center gap-3">
-        <i class="fa fa-github text-indigo-400 text-xl"></i>
-        <div class="text-left"><div class="text-xs text-gray-500">GitHub</div><div class="text-sm">JING04-PRODUCER</div></div>
-      </a>
+  <!-- skills -->
+  <section class="mb-16">
+    <h2 class="text-lg font-semibold border-b pb-2 mb-6 text-gray-900">技能</h2>
+    <div class="space-y-3 text-sm text-gray-600">
+      <div>
+        <span class="text-gray-800 font-medium">语言：</span>Python（主力）、Java（Spring Boot）、SQL
+      </div>
+      <div>
+        <span class="text-gray-800 font-medium">后端：</span>FastAPI、Uvicorn、REST API 设计
+      </div>
+      <div>
+        <span class="text-gray-800 font-medium">数据：</span>SQLite、aiosqlite、MySQL 基础
+      </div>
+      <div>
+        <span class="text-gray-800 font-medium">LLM：</span>OpenAI 兼容 API、Function Calling、Agent 编排、Token 计数
+      </div>
+      <div>
+        <span class="text-gray-800 font-medium">工具：</span>Git、Docker、Maven、Linux 基本操作
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="border-t border-gray-800 py-6 text-center text-sm text-gray-600">
-  © 2025 JING. Built with Tailwind CSS.
-</footer>
+  <!-- contact -->
+  <section class="mb-16">
+    <h2 class="text-lg font-semibold border-b pb-2 mb-6 text-gray-900">联系方式</h2>
+    <p class="text-sm text-gray-600">
+      Email：<a href="mailto:3573851322@qq.com">3573851322@qq.com</a><br>
+      GitHub：<a href="https://github.com/JING04-PRODUCER">JING04-PRODUCER</a><br>
+      欢迎交流 LLM 应用和 Agent 开发相关话题。
+    </p>
+  </section>
+
+  <footer class="text-xs text-gray-400 border-t pt-6">
+    updated 2025
+  </footer>
+
+</div>
 
 </body>
 </html>
