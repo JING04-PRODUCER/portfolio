@@ -20,14 +20,15 @@
     <h1 class="text-3xl font-bold mb-2 text-gray-900">JING</h1>
     <p class="text-gray-500 mb-4">
       计算机科学与技术 2303 班<br>
-      方向：后端开发 / LLM 应用 / Agent 编排
+      方向：Python / Java / AI Agent / LLM 应用开发
     </p>
     <p class="text-gray-600 max-w-lg leading-relaxed">
-      写 Python 和 Java，最近在做 AI Agent 相关的开源项目。
-      喜欢从实际需求出发，做了几个自己也在用的工具。
+      计科在读，专注 AI Agent 和 LLM 应用开发。热爱开源，致力于用代码解决真实痛点。
+      维护 3 个开源项目，覆盖 Token 优化、成本追踪、Agent 编排。
     </p>
     <div class="mt-4 flex gap-4 text-sm">
       <a href="https://github.com/JING04-PRODUCER">GitHub</a>
+      <a href="https://juejin.cn/user/3573851322">掘金</a>
       <a href="mailto:3573851322@qq.com">3573851322@qq.com</a>
     </div>
   </header>
@@ -36,18 +37,17 @@
   <section class="mb-16">
     <h2 class="text-lg font-semibold border-b pb-2 mb-6 text-gray-900">项目</h2>
 
-    <!-- agent-orchestrator -->
+    <!-- promptslim -->
     <div class="mb-8">
       <h3 class="font-semibold text-gray-900">
-        <a href="https://github.com/JING04-PRODUCER/agent-orchestrator">AgentOrchestrator</a>
-        <span class="text-gray-400 font-normal text-sm ml-2">Python + Java</span>
+        <a href="https://github.com/JING04-PRODUCER/promptslim">PromptSlim</a>
+        <span class="text-gray-400 font-normal text-sm ml-2">Python</span>
       </h3>
       <p class="text-gray-600 text-sm mt-1 leading-relaxed">
-        LLM Agent 编排框架。支持 Function Calling、异步工具执行带超时和指数退避重试、事件钩子、SSE 流式响应。
-        底层适配 OpenAI 兼容协议，一套代码对接 OpenAI / 百炼 / DeepSeek。写了 6 个集成测试，用的真实百炼 API。
+        AI 提示词瘦身工具包——在 API 调用前自动剃掉冗余 Token，节省 5%~75%。40+ 条中英文冗余模式、代码保护避免破坏 prompt、Anthropic Prompt Caching 缓存分析、LLM 语义压缩。支持 GPT / Claude / DeepSeek / Qwen。
       </p>
       <div class="mt-2 text-xs text-gray-400">
-        FastAPI · Pydantic · tenacity · asyncio · pytest
+        tiktoken · Anthropic Prompt Caching · 代码保护 · 中英文双语 · Rich CLI
       </div>
     </div>
 
@@ -58,28 +58,24 @@
         <span class="text-gray-400 font-normal text-sm ml-2">Python + Java</span>
       </h3>
       <p class="text-gray-600 text-sm mt-1 leading-relaxed">
-        做这个是因为调 API 时不知道花了多少钱——把 base_url 指向这个代理，它自动拦截请求、算 Token、记费用。
-        内置主流模型定价表，超预算会告警。另起了一个 Spring Boot 仪表盘，用 Chart.js 展示费用趋势。
-        已经在本地跑了，追踪着自己的 API 调用。
+        透明 API 成本追踪代理——一行代码不改。只需把 base_url 指向代理，自动记录 Token 消耗与费用。内置 20+ 模型定价、日/月预算告警、CSV 导出、模型成本对比、Slack Webhook 通知，Spring Boot + Chart.js 可视化仪表盘。
       </p>
       <div class="mt-2 text-xs text-gray-400">
-        FastAPI 透明代理 · SQLite · Spring Boot · Thymeleaf · Chart.js · Docker
+        FastAPI 透明代理 · SQLite · Spring Boot · Chart.js · Webhook 告警 · Docker
       </div>
     </div>
 
-    <!-- promptslim -->
+    <!-- agent-orchestrator -->
     <div class="mb-8">
       <h3 class="font-semibold text-gray-900">
-        <a href="https://github.com/JING04-PRODUCER/promptslim">PromptSlim</a>
-        <span class="text-gray-400 font-normal text-sm ml-2">Python</span>
+        <a href="https://github.com/JING04-PRODUCER/agent-orchestrator">AgentOrchestrator</a>
+        <span class="text-gray-400 font-normal text-sm ml-2">Python + Java</span>
       </h3>
       <p class="text-gray-600 text-sm mt-1 leading-relaxed">
-        提示词瘦身工具。中英文 40+ 种冗余模式，正则去掉语气词和啰嗦句式。
-        支持 tiktoken 精确计数多模型 Token，也支持调 LLM 做语义级压缩，压缩前后对比报告。
-        实测中文口语省 34%、英文口语省 59%。和 Cost Sentinel 搭配用：调用前瘦身省 Token，调用后代理追踪费用。
+        跨语言 AI Agent 编排平台。Python FastAPI 推理核心 + Java Spring Boot 管理面板。Function Calling、多 Agent 工作流（顺序/并行/DAG）、Web Search 工具、RAG 记忆系统、插件化工具注册中心，兼容所有 OpenAI 接口模型。
       </p>
       <div class="mt-2 text-xs text-gray-400">
-        tiktoken · 中英文冗余检测 · Rich CLI · 20 tests passed
+        FastAPI · Spring Boot · PostgreSQL · Redis · DuckDuckGo · Docker Compose
       </div>
     </div>
   </section>
@@ -95,10 +91,10 @@
         <span class="text-gray-800 font-medium">后端：</span>FastAPI、Uvicorn、REST API 设计
       </div>
       <div>
-        <span class="text-gray-800 font-medium">数据：</span>SQLite、aiosqlite、MySQL 基础
+        <span class="text-gray-800 font-medium">数据：</span>SQLite、PostgreSQL、Redis
       </div>
       <div>
-        <span class="text-gray-800 font-medium">LLM：</span>OpenAI 兼容 API、Function Calling、Agent 编排、Token 计数
+        <span class="text-gray-800 font-medium">LLM：</span>OpenAI 兼容 API、Function Calling、Agent 编排、Token 计数、RAG
       </div>
       <div>
         <span class="text-gray-800 font-medium">工具：</span>Git、Docker、Maven、Linux 基本操作
@@ -112,12 +108,13 @@
     <p class="text-sm text-gray-600">
       Email：<a href="mailto:3573851322@qq.com">3573851322@qq.com</a><br>
       GitHub：<a href="https://github.com/JING04-PRODUCER">JING04-PRODUCER</a><br>
-      欢迎交流 LLM 应用和 Agent 开发相关话题。
+      掘金：<a href="https://juejin.cn/user/3573851322">稀土掘金</a><br>
+      欢迎交流 AI Agent 和 LLM 应用开发相关话题。
     </p>
   </section>
 
   <footer class="text-xs text-gray-400 border-t pt-6">
-    updated 2025
+    updated 2026-06-18
   </footer>
 
 </div>
