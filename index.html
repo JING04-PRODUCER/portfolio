@@ -361,7 +361,7 @@
 
   // ── Chat Widget ──
   const NVIDIA_KEY = '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';
-  const NVIDIA_URL = 'https://integrate.api.nvidia.com/v1/chat/completions';
+  const PROXY_URL = 'https://jing-chat-proxy.remarkable-balaur.workers.dev/chat';
   const MODEL = 'meta/llama-3.1-8b-instruct';
 
   const SYSTEM_PROMPT = `你是 JING 的 AI 助手，专门回答关于他的问题。用友好专业的语气，回复控制在 200 字以内，中文优先。
@@ -459,7 +459,7 @@
         ...messages.map(m => ({ role: m.role, content: m.content }))
       ];
 
-      const resp = await fetch(NVIDIA_URL, {
+      const resp = await fetch(PROXY_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
